@@ -1,0 +1,514 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+/* Pumpkin Orange: #FF7518
+Golden Harvest: #FFC72C
+Cranberry Red: #A52A2A
+Autumn Brown: #8B4513
+Sage Green: #BCB88A
+Cream Beige: #F5DEB3 */
+:root {
+    --Brand: #8B4513;
+    --Brand-Opacity: #8b45132b;
+    --Darkest: #0F172A;
+    --Overlay: #0f172a7a;
+    --Lightest: #FFFFFF;
+    --Light: #eff2f6;
+    --Dark: #A52A2A;
+    --Dark-Opacity: #8b45131f;
+    --CardBg: #8b451344;
+    --Mid: #502b11;
+    --special: #FFC72C
+}
+
+body {
+    font-family: "Nunito Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    background-color: var(--Light);
+    overflow-x: hidden;
+  
+}
+header {
+    padding: 20px 0px 0px;
+    width: 100%;
+    
+}
+main {
+    padding: 20px;
+}
+
+/* all flex element */
+header, .container, .user-container, 
+.settings-icon, .balance-section,
+.stake-btn-container, .toggle-container-inner, 
+.toggle-inner .toggle-inner,
+.exit-game-inner {
+    display: flex;
+    align-items: center;
+}
+/* user section */
+h1 {
+    color: var(--Darkest);
+    padding: 6px 12px 1px ;
+    font-size: 0.8125em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 0px .5px .5px var(--Brand-Opacity);
+    text-align: center;
+    background-color: var(--Dark-Opacity);
+    margin-left: -7px;
+    border-top-right-radius: 15px;
+    border-bottom: 1.5px;
+    border-bottom: solid var(--Brand);
+    position: relative;
+    z-index: 1;
+}
+
+h1::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #a52a2a60;
+    opacity: .7;
+    top: -6px;
+    border-radius: 100px 15px 0px 15px;
+    transform: rotate(-280deg);
+}
+
+
+.user-image-container {
+    background-color: var(--Light);
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: 2.5px;
+    border: solid var(--Brand);;
+    border-radius: 50%;
+    z-index: 10;
+    
+}
+.user-container {
+    gap: 0px;
+}
+.user-container img {
+    width: 100%;
+    height: 100%;
+}
+
+/* overlay element section */
+.overlay {
+    background-color: var(--Overlay);
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+}
+#overlay {
+    display: none; /* Ensure it's hidden initially */
+    /* Add other overlay styles here */
+}
+
+#overlay.visible {
+    display: block; /* Show when the "visible" class is added */
+}
+
+.close-overlay-btn {
+    position: absolute;
+    right: -18px;
+    top: -25px;
+    background: var(--special);
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    border: none;
+    font-size: 25px;
+    color: var(--Mid);
+    padding-top: 3.5px;
+    padding-left: 2.4px;
+    text-shadow: 1px 0px 1px var(--Darkest);
+    border: 1px solid var(--Mid);
+}
+
+.settings-element  {
+    display: inline-block;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background-color: var(--Mid);
+    color: #FFFFFF;
+    width: 250px;
+    height: 250px;
+    border: 6px double var(--special);
+    border-top-right-radius: 100px 25px;
+    border-top-left-radius: 100px 25px;
+    border-bottom-left-radius: 100px 25px;
+    border-bottom-right-radius: 100px 25px;
+    text-align: center;
+}
+
+/* settings */
+.settings-container {
+    margin-left: auto;
+}
+.settings-icon {
+    gap: 25px;
+}
+.setting-inner {
+    flex-direction: column;
+    padding: 30px 0px;
+}
+.setting-inner p, .exit-game p {
+    font-size: 1.2em;
+}
+.exit-game {
+    padding: 40px 10px;
+}
+.exit-game-inner {
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+}
+.exit-game-inner button {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.yes {
+    background-color: var(--Dark);
+    color: var(--Lightest);
+}
+.toggle-container-inner {
+    justify-content: center;
+    padding-top: 30px;
+    gap: 15px;
+}
+.setting-inner i {
+    font-size: 25px;
+    height: 25px;
+}
+.toggle {
+    background-color: #8b451381;
+    padding: 5px 12px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    transition: all 0.3s ease;
+    color: #eff2f653;
+}
+
+.toggle .toggle-inner {
+    display: flex;
+    gap: 30px;
+    
+}
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 38px;
+    height: 25px;
+    right: 4px;
+    top: 3px;
+    border-radius: 5px;
+    background-color: var(--Darkest);
+    z-index: -5;
+    
+}
+.toggle.active::before {
+    left: unset; /* Reset left to allow using right */
+    left: 4px; /* Move the circle to the right */
+    color: var(--Lightest);
+}
+/* remove button bg */
+.settings-icon button, .balance-section
+.history, .refresh-btn {
+    background: none;
+    border: none;
+}
+.settings-icon i, .balance-section i, 
+.balance i, .history i, .refresh-btn i,
+.money-div p .money {
+    font-size: 25px;
+    color: var(--Dark);
+    text-shadow: .5px 0px .5px var(--Darkest);
+}
+
+/* how to play */
+.how-to-play p { 
+    padding: 50px 15px;
+    text-align: center;
+    font-size: .9em;
+    text-shadow: 0px 2px 1px var(--Darkest);
+    color: var(--Lightest);
+} 
+
+/* balance section */
+.balance-section {
+    gap: 20px;
+    padding: 40px 0;
+}
+.balance-section i {
+    font-size: 0.9em; 
+    padding-left: 1px;
+}
+.balance i {
+    padding-top: 4px;
+}
+
+
+.balance-section .money-div {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    
+}
+.money-div .balance {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--Lightest);
+    padding: 3px 12px 3px 22px ;
+    margin-left: -5px;
+    margin-bottom: 3px;
+    color: var(--Darkest);
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0px .5px .5px var(--Brand-Opacity);
+
+}
+
+.money-div p {
+    background-color: var(--Light);
+    transform: rotate(55deg);
+    overflow: hidden;
+}
+
+
+.balance-section .history, .refresh-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin-left: auto;
+}
+.balance-section .history, .refresh-btn {
+    margin-top: -5px;
+    font-size: .8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px .5px var(--Brand-Opacity);
+    color: var(--Darkest);
+}
+
+.history i, .refresh-btn i {
+    font-size: 15px;
+}
+
+.history--dark--container {
+    display: none;
+}
+
+/* card section */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    place-content: center;  
+    gap: 8px;
+    justify-content: center;
+}
+@media (min-width: 350px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px;
+        place-items: center;
+   }
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--CardBg);
+    color: var(--Lightest);
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+}
+
+.flip-o {
+    color: var(--Dark);
+    text-shadow: 0px 1px 2px var(--Brand);
+}
+
+.card.flip-o {
+    background-color: var(--Lightest);
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.animated {
+    animation: myAnim 1s ease 0s infinite normal both;
+    text-shadow: 0px 2px 1px var(--Mid);
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: .8;
+		transform: scale(0.5);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(2.5);
+	}
+}
+
+.card.revealed {
+    background-color: var(--Lightest);
+    color: black;
+    cursor: default;
+}
+
+.stake-btn-container {
+    gap: 12px;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+/* Common styles for card signs */
+.card-back .status-sign {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0.8;
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Styling for unmatched X */
+.card-back .unmatched-sign {
+    position: absolute;
+    font-size: 18px;
+    top: 4px;
+    right: 5px;
+    animation: shake 0.5s ease;
+}
+
+
+/* Styling for matched checkmark */
+.card-back .matched-sign {
+    font-size: 18px;
+    animation: pop 0.3s ease-out;
+}
+
+/* Styling for unmatched (X) and void cards */
+.status-sign.unmatched-sign {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    color: var(--Dark);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.status-sign.void-sign, .status-sign.void-pair-sign{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--Light);
+    background-color: var(--Darkest);
+    padding: 3px 8px;
+    font-size: .5em;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 100%;
+	}
+
+	10% {
+		transform: rotate(2deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-4deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(4deg);
+	}
+
+	80% {
+		transform: rotate(-2deg);
+	}
+
+	90% {
+		transform: rotate(2deg);
+	}
+}
+
+/* Pop animation for ✅ */
+@keyframes pop {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+.stake-btn {
+    width: 55px;
+    height: 35px;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 8px;
+    text-shadow: 0px 1px 1px var(--Light);
+    border: 2px solid var(--Mid);
+    background-color: var(--Brand-Opacity);
+    box-shadow: 0px 2px 0px 3px #693b3b90;
+    color: var(--Mid);
+}
+.stake-btn:focus {
+    background: var(--special);
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Matching Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="user-container">
+                <div class="user-image-container">
+                    <img src="/img/user.png" alt="user">
+                </div>
+                <h1>ADM3929</h1>
+            </div>
+            <!-- <h3 id="score-board"></h3> -->
+            <div class="settings-container">
+                <div class="settings-icon" id="setting-icons">
+                    <button type="button" id="how-to-play-btn">
+                        <i class="fi fi-rr-lightbulb-question" ></i>
+                    </button>
+                    <button type="button" id="setting-btn">
+                        <i class="fi fi-rr-settings"></i>
+                    </button>
+                    <button type="button" id="exits-btn">
+                        <i class="fi fi-rr-arrow-small-right"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <section class="overlay" id="overlay">
+            <div class="settings-element" id="settings-icon-container">
+                <button type="button" class="close-overlay-btn" id="close-btn">
+                    <i class="fi fi-rr-octagon-xmark"></i>
+                </button>
+                <div class="how-to-play" id="how-to-play">
+                    <p>
+                        This project is a Frontend Mentor challenge,  
+                        I took the challenge and used  JavaScript to 
+                        create a functionality that enables the filtering 
+                        of job listings based on selected categories.
+                    </p>
+                    
+                </div>
+                <div class="setting-inner" id="setting">
+                    <p>settings</p>
+                    <div class="toggle-container">
+                        <div class="toggle-container-inner">
+                            <i class="fi fi-rr-music-alt"></i>
+                            <div class="active toggle" id="toggle-music">
+                                <span id="on-music" class="toggle-inner on">On 
+                                    <span id="off-music" class="off">Off</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="toggle-container-inner">
+                            <i class="fi fi-rr-volume"></i>
+                            <div class="active toggle" id="toggle-sound">
+                                <span id="on-sound" class="toggle-inner">On 
+                                    <span id="off-sound" class="off">Off</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exit-game" id="exit">
+                    <p>Do you want to exit the game?</p>
+                    <div class="exit-game-inner">
+                        <button class="yes">Yes</button>
+                        <button class="no">No</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="balance-section">
+            <div class="money-div">
+                <p>
+                    <i class="money fi fi-rr-money-bill-wave"></i> 
+                </p>
+                <h3 class="balance">5,000,000 <i class="fi fi-rr-plus"></i></h3>
+                
+            </div>
+            <button type="button" id="restart-button" class="refresh-btn">
+                <i class="fi fi-rr-refresh"></i>
+                Refresh
+            </button>
+
+            <button class="history">
+                <i class="fi fi-rr-rectangle-vertical-history"></i>
+                History
+            </button>
+        </section>
+        <section class="container">
+            <div class="game-container" id="game-board"></div>
+        </section>
+        <section class="stake-btn-container">
+            <button type="button" class="stake-btn">100</button>
+            <button type="button" class="stake-btn">1k</button>
+            <button type="button" class="stake-btn">10k</button>
+            <button type="button" class="stake-btn">50k</button>
+            <button type="button" class="stake-btn">100k</button>
+        </section>
+    </main>
+        
+    <script src="index.js" type="module"></script>
+</body>
+</html>
