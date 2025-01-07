@@ -1,5 +1,5 @@
 import { Toggle } from './toggle.js';
-import questionMark from './img/question.png'
+
 
 const overlay = document.getElementById('overlay');
 // settings and how to play Content elements
@@ -99,7 +99,7 @@ const initializeGame = () => {
             card.innerHTML = `
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="${questionMark}" class="card-front" />
+                        <img src="/src/asset/img/question.png" class="card-front" />
                     </div>
                     <div class="card-back hidden">${emoji}</div>
                 </div>
