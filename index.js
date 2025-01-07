@@ -1,4 +1,5 @@
 import { Toggle } from './toggle.js';
+import questionMark from './img/question.png'
 
 const overlay = document.getElementById('overlay');
 // settings and how to play Content elements
@@ -11,6 +12,7 @@ const onMusic = document.getElementById('on-music');
 const offMusic = document.getElementById('off-music');
 const onSound = document.getElementById('on-sound');
 const offSound = document.getElementById('off-sound');
+
 
 // Get the game board element
 const gameBoard = document.getElementById('game-board');
@@ -97,11 +99,12 @@ const initializeGame = () => {
             card.innerHTML = `
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="./img/question-mark.png" class="card-front" />
+                        <img src="${questionMark}" class="card-front" />
                     </div>
                     <div class="card-back hidden">${emoji}</div>
                 </div>
             `;
+
         }
 
         card.addEventListener('click', handleCardClick);
