@@ -352,6 +352,7 @@ h1::after {
     cursor: pointer;
     border-radius: 8px;
     position: relative;
+    background-image: url('./assets/img/question.png');
 }
 
 .flip-o {
@@ -444,6 +445,10 @@ h1::after {
     text-align: center;
     font-weight: bold;
 }
+.card-front {
+    background-image: url('./assets/img/question.png');
+}
+
 
 
 @keyframes shake {
